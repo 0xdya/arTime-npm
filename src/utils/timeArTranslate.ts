@@ -24,12 +24,18 @@ const arabicUnits: Record<Unit, [string, string, string, string]> = {
   second: ["ثانية", "ثانيتين", "ثوانٍ", "ثانية"]
 };
 
-export const arFormat = (dateString: string | Date, dataFormat: string ): string => {
+export const arFormat = (dateInput: string | Date, dataFormat: string ): string => {
 
-    const custom_date = dayjs(dateString, dataFormat);
+      let custom_date;
+
+      if (dateInput instanceof Date) {
+        custom_date = dayjs(dateInput);
+      } else {
+        custom_date = dayjs(dateInput, dataFormat);
+      }
 
     if (!custom_date.isValid()) {
-        throw new Error(`Invalid Date: The provided date "${dateString}" does not match the format "${dataFormat}".`);
+        throw new Error(`Invalid Date: The provided date "${dateInput}" does not match the format "${dataFormat}".`);
     }
 
     const date = new Date(custom_date.toDate());

@@ -1,4 +1,4 @@
-import { arFormat as _arFormat } from "./utils/arTimeTranslate";
+import { arFormat as _arFormat } from "./utils/timeArTranslate";
 import { format as _format, Format } from "./utils/dateTypes";
 
 /**

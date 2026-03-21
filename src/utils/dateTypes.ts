@@ -27,7 +27,7 @@ export interface Format {
   dayMonthYear: "DD/MM/YYYY";
 
   /** صيغة ISO 8601 العالمية (مثال: 2026-03-21T14:30:15Z) */
-  iso8601: "DD-MM-YYYYTHH:mm:ssZ";
+  iso8601: "YYYY-MM-DDTHH:mm:ssZ[Z]";
 
   /** الوقت بنظام 12 ساعة (مثال: 02:30 PM) */
   time12h: "hh:mm A";
@@ -54,7 +54,7 @@ export const format: Format = {
   monthDay: "MMMM D",
   monthYear: "MMMM YYYY",
   dayMonthYear: "DD/MM/YYYY",
-  iso8601: "DD-MM-YYYYTHH:mm:ssZ",
+  iso8601: "YYYY-MM-DDTHH:mm:ssZ[Z]",
   time12h: "hh:mm A",
   time12hSeconds: "hh:mm:ss A",
   weekday: "dddd",
