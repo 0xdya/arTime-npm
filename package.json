@@ -1,31 +1,49 @@
 {
   "name": "time-ar",
   "version": "1.0.1",
-  "description": "أدوات مصغّرة لـ الوقت النسبي بالعربية (مثل «منذ ساعتين»، «الآن») . استخدمها حين تحتاج نصوص \"منذ متى\" بالعربية الفصحى الحديثة، مع مفاتيح تنسيق مكتوبة بالأنواع لتحليل مدخلات التاريخ.",
-  "main": "index.ts",
+  "description": "أدوات مصغّرة لـ الوقت النسبي بالعربية (مثل «منذ ساعتين»، «الآن»).",
+  "main": "dist/index.js",
   "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
   "scripts": {
-    "dev": "nodemon src/index",
-    "start": "nodemon dist/index",
+    "dev": "nodemon src/index.ts",
+    "start": "node dist/index.js",
     "build": "tsc"
-  },
-  "devDependencies": {
-    "ts-node": "^10.9.2",
-    "typescript": "^5.9.3"
   },
   "dependencies": {
     "dayjs": "^1.11.20"
   },
+  "devDependencies": {
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.3",
+    "semantic-release": "^23.0.0",
+    "@semantic-release/npm": "^11.0.0",
+    "@semantic-release/github": "^10.0.0",
+    "@semantic-release/commit-analyzer": "^11.0.0",
+    "@semantic-release/release-notes-generator": "^12.0.0"
+  },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/0xdya/arTime-npm.git"
+    "url": "https://github.com/0xdya/timeAr.git"
   },
   "author": "_mp1, 0xdya",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/0xdya/arTime-npm/issues"
+    "url": "https://github.com/0xdya/timeAr/issues"
   },
-  "homepage": "https://github.com/0xdya/arTime-npm#readme"
+  "homepage": "https://github.com/0xdya/timeAr#readme",
+  "engines": {
+    "node": ">=18"
+  },
+  "release": {
+    "branches": ["main"],
+    "plugins": [
+      "@semantic-release/commit-analyzer",
+      "@semantic-release/release-notes-generator",
+      "@semantic-release/npm",
+      "@semantic-release/github"
+    ]
+  }
 }
-
-
