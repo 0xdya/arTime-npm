@@ -8,11 +8,12 @@ dayjs.extend(utc);
 dayjs.extend(timezone);
 dayjs.extend(customParseFormat);
 
-type Unit = "year" | "month" | "day" | "hour" | "minute" | "second";
+type Unit = "year" | "month" | "week" | "day" | "hour" | "minute" | "second";
 
 const intervals: Record<Unit, number> = {
   year: 31536000,
   month: 2592000,
+  week: 604800,
   day: 86400,
   hour: 3600,
   minute: 60,
@@ -22,6 +23,7 @@ const intervals: Record<Unit, number> = {
 const arabicUnits: Record<Unit, [string, string, string, string]> = {
   year:   ["سنة", "سنتين", "سنوات", "سنة"],
   month:  ["شهر", "شهرين", "أشهر", "شهراً"],
+  week:   ["أسبوع", "أسبوعين", "أسابيع", "أسبوعاً"],
   day:    ["يوم", "يومين", "أيام", "يوماً"],
   hour:   ["ساعة", "ساعتين", "ساعات", "ساعة"],
   minute: ["دقيقة", "دقيقتين", "دقائق", "دقيقة"],
